@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { Collapse } from "bootstrap";
-import baseUrl from "../assets/js/baseUrl";
 ("../assets/js/baseUrl");
 
 export default function Nav() {
@@ -17,7 +16,7 @@ export default function Nav() {
     },
     {
       url: "/",
-      img: `${baseUrl}assets/images/nav/nav-mb/logo-mb.png`,
+      img: `assets/images/nav/nav-mb/logo-mb.png`,
     },
     {
       url: "/reserve",
@@ -54,7 +53,7 @@ export default function Nav() {
           <Link to="/">
             <img
               className="logo-mb d-block"
-              src={`${baseUrl}assets/images/nav/nav-mb/logo-mb.png`}
+              src="assets/images/nav/nav-mb/logo-mb.png"
               alt="pig logo"
             />
           </Link>
@@ -64,22 +63,19 @@ export default function Nav() {
             type="button"
             role="button"
             style={{
-              backgroundImage: `url(${baseUrl}assets/images/index/nav-bg.png)`,
+              backgroundImage: `url(assets/images/index/nav-bg.png)`,
             }}
             id="nav-toggle"
             ref={menuBtnRef}
             onClick={() => handleCollapse(false)}
           >
-            <img
-              src={`${baseUrl}assets/images/nav/nav-mb/menu.png`}
-              alt="menu button"
-            />
+            <img src="assets/images/nav/nav-mb/menu.png" alt="menu button" />
           </button>
           <button
             type="button"
             role="button"
             style={{
-              backgroundImage: `url(${baseUrl}assets/images/index/nav-bg.png)`,
+              backgroundImage: `url(assets/images/index/nav-bg.png)`,
             }}
             id="nav-close"
             ref={closeBtnRef}
@@ -87,7 +83,7 @@ export default function Nav() {
             onClick={() => handleCollapse(true)}
           >
             <img
-              src={`${baseUrl}assets/images/nav/nav-mb/close-btn.png`}
+              src="assets/images/nav/nav-mb/close-btn.png"
               alt="menu button"
             />
           </button>
@@ -98,7 +94,11 @@ export default function Nav() {
             return (
               <li key={i} className="py-3 px-4">
                 <Link to={data.url} className="text-dark text-decoration-none">
-                  {data.img ? <img src={data.img} /> : data.title}
+                  {data.img ? (
+                    <img src={data.img} alt={data.title} />
+                  ) : (
+                    data.title
+                  )}
                 </Link>
               </li>
             );
