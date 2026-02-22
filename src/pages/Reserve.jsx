@@ -52,7 +52,7 @@ export default function Reserve() {
         <div className="container ps-md-80 py-40">
           <div className="row align-items-center">
             <div className="col-md-6  col-12">
-              <div className=" mx-24 position-relative  py-55">
+              <div className="mx-24 position-relative py-55">
                 <img
                   className="position-absolute align-items-center"
                   src="assets/images/reserve/title-deco.png"
