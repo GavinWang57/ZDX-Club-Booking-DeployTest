@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { Collapse } from "bootstrap";
-("../assets/js/baseUrl");
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(true);
@@ -94,11 +93,7 @@ export default function Nav() {
             return (
               <li key={i} className="py-3 px-4">
                 <Link to={data.url} className="text-dark text-decoration-none">
-                  {data.img ? (
-                    <img src={data.img} alt={data.title} />
-                  ) : (
-                    data.title
-                  )}
+                  {data.img ? <img src={data.img} /> : data.title}
                 </Link>
               </li>
             );
@@ -108,17 +103,18 @@ export default function Nav() {
       <div
         className="nav-collapse collapse w-100 py-4 shadow position-absolute left-0 border-top border-black-400"
         id="collapseExample"
-        style={{ backgroundImage: "url(/assets/images/index/nav-bg.png)" }}
+        style={{
+          backgroundImage: `url(assets/images/index/nav-bg.png)`,
+        }}
         ref={navCollapse}
       >
         <div
           className="card card-body p-0 border-0"
-          style={{ backgroundImage: "url(/assets/images/index/nav-bg.png)" }}
+          style={{ backgroundImage: "url(assets/images/index/nav-bg.png)" }}
         >
           <ul className="list-unstyled text-center">
             {navDatas.map((data, i) => {
-              return (
-                <>
+              
                   {data.title ? (
                     <li key={i} className="py-3">
                       <Link
@@ -131,8 +127,7 @@ export default function Nav() {
                   ) : (
                     ""
                   )}
-                </>
-              );
+               ;
             })}
           </ul>
         </div>

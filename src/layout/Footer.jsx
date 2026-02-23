@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -35,9 +37,9 @@ export default function Footer() {
                 <li className="text-center mb-md-20 mb-3">網站地圖</li>
                 <li className="text-center mb-md-20 mb-3">預約查詢</li>
                 <li className="text-center mb-md-20 mb-3">
-                  <a className="text-decoration-none" href="/#/admin-dashboard">
+                  <Link className="text-decoration-none" to="/admin-dashboard">
                     後台管理
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -104,7 +106,10 @@ export default function Footer() {
               </li>
               <li className="p-2 footer-icon ">
                 <a href="#">
-                  <img src="assets/images/footer/ic-ig.png" alt="icon ig" />
+                  <img
+                    src="assets/images/footer/ic-ig.png"
+                    alt="icon instagram"
+                  />
                 </a>
               </li>
             </ul>
